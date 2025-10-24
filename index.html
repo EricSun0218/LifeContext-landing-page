@@ -8,8 +8,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
-        background: radial-gradient(ellipse at center, hsl(220, 20%, 10%) 0%, hsl(220, 20%, 4%) 100%);
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Cpath d='M20 18h-2v2h-2v2h2v2h2v-2h2v-2h-2v-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3c72 100%) !important;
+        background-attachment: fixed;
+        background-image: 
+          radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M30 28h-2v2h-2v2h2v2h2v-2h2v-2h-2v-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+        min-height: 100vh;
+      }
+      
+      /* 确保背景覆盖所有元素 */
+      html {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3c72 100%) !important;
+      }
+      
+      /* 强制覆盖任何可能的白色背景 */
+      * {
+        background-color: transparent !important;
+      }
+      
+      body, html, #root {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1e3c72 100%) !important;
       }
       /* For custom gradient text */
       .text-gradient {
@@ -29,6 +49,36 @@
       }
       .animate-rotate {
         animation: rotate 20s linear infinite;
+      }
+      
+      /* Tech glow effects */
+      .tech-glow {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+      }
+      
+      .tech-border {
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.1);
+      }
+      
+      /* Animated background particles */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+      }
+      
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      /* Pulse effect for tech elements */
+      @keyframes tech-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      
+      .animate-tech-pulse {
+        animation: tech-pulse 2s ease-in-out infinite;
       }
     </style>
   <script type="importmap">

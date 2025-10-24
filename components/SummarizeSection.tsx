@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Newspaper, FileText, Youtube, Mic, Rss, Globe } from 'lucide-react';
 
-const TABS = ['Summarize', 'Chat', 'Connect', 'Review', 'Recall'];
+const TABS = ['Context', 'Chat', 'Connect', 'Review', 'Recall'];
 
 const CONTENT = {
-  Summarize: 'Get instant summaries of all your content.',
+  Context: 'Build your intelligent knowledge base from all content sources.',
   Chat: 'Chat with your documents, videos, and articles.',
   Connect: 'Find connections between different pieces of information.',
   Review: 'Review key highlights and takeaways automatically.',
@@ -22,41 +22,51 @@ const SOURCES = [
 
 const SummarizeSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(TABS[0]);
-  const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
-  const [pillStyle, setPillStyle] = useState({});
-
-  useEffect(() => {
-    const activeTabIndex = TABS.indexOf(activeTab);
-    const activeTabEl = tabsRef.current[activeTabIndex];
-    if (activeTabEl) {
-      setPillStyle({
-        left: activeTabEl.offsetLeft,
-        width: activeTabEl.offsetWidth,
-      });
-    }
-  }, [activeTab]);
 
   return (
-    <section id="features" className="py-20 px-4 md:px-8">
+    <section id="features" className="py-8 px-4 md:px-8">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        {/* Tabs */}
-        <div className="relative flex items-center p-1 border border-gray-700/60 rounded-full bg-gray-900/50 backdrop-blur-sm mb-12">
-          <div
-            className="absolute top-1 bottom-1 h-auto bg-gray-700/50 rounded-full transition-all duration-300 ease-in-out"
-            style={pillStyle}
-          ></div>
-          {TABS.map((tab, index) => (
-            <button
-              key={tab}
-              ref={(el) => (tabsRef.current[index] = el)}
-              onClick={() => setActiveTab(tab)}
-              className={`relative z-10 px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                activeTab === tab ? 'text-white' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* Context Button with Arrows to Other Functions */}
+        <div className="flex flex-wrap justify-center items-center gap-3 mb-16">
+          {/* Context Button */}
+          <button
+            onClick={() => setActiveTab('Context')}
+            className={`px-6 py-3 rounded-full text-base font-medium transition-all duration-300 ${
+              activeTab === 'Context' 
+                ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/30' 
+                : 'bg-black/40 border border-blue-500/30 text-gray-300 hover:text-white hover:border-blue-500/50'
+            }`}
+          >
+            Context
+          </button>
+
+          {/* Arrow */}
+          <div className="flex items-center text-blue-400 mx-2">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+
+          {/* Other Function Buttons */}
+          <div className="flex flex-wrap items-center gap-2">
+            {TABS.slice(1).map((tab, index) => (
+              <div key={tab} className="flex items-center">
+                <button
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeTab === tab 
+                      ? 'bg-blue-500/20 border border-blue-500/50 text-blue-300' 
+                      : 'bg-black/20 border border-gray-600/30 text-gray-400 hover:text-gray-300 hover:border-gray-500/50'
+                  }`}
+                >
+                  {tab}
+                </button>
+                {index < TABS.slice(1).length - 1 && (
+                  <div className="text-gray-500 mx-1">•</div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Title */}
@@ -67,7 +77,7 @@ const SummarizeSection: React.FC = () => {
           {/* Left: Sources */}
           <div className="flex flex-col gap-4 w-48">
             {SOURCES.map((source) => (
-              <div key={source.name} className="flex items-center gap-3 px-4 py-2 rounded-full border border-gray-700/80 bg-gray-900/60 backdrop-blur-sm text-sm">
+              <div key={source.name} className="flex items-center gap-3 px-4 py-2 rounded-full border border-blue-500/30 bg-black/40 backdrop-blur-sm text-sm shadow-md shadow-blue-500/10">
                 <span className="text-blue-400">{source.icon}</span>
                 <span>{source.name}</span>
               </div>

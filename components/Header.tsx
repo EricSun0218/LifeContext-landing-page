@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black/50 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 bg-black/30 backdrop-blur-xl border-b border-blue-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
@@ -14,14 +14,15 @@ const Header: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <nav className="flex items-baseline space-x-4">
-              <a href="#features" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
-              <a href="#how-it-works" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">How It Works</a>
-              <a href="#testimonials" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Testimonials</a>
+              <a href="#open-source" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Open Source</a>
+              <a href="#doc" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Doc</a>
+              <a href="#research" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Research</a>
+              <a href="#join-us" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Join Us</a>
             </nav>
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <a href="#" className="text-gray-300 hover:text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Sign In</a>
-            <a href="#" className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
+            <a href="#doc" className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
               Get Started Free
             </a>
           </div>
@@ -51,11 +52,12 @@ const Header: React.FC = () => {
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#features" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Features</a>
-            <a href="#how-it-works" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">How It Works</a>
-            <a href="#testimonials" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
-             <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sign In</a>
-            <a href="#" className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white block px-3 py-2 rounded-md text-base font-medium">Get Started Free</a>
+            <a href="#open-source" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Open Source</a>
+            <a href="#doc" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Doc</a>
+            <a href="#research" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Research</a>
+            <a href="#join-us" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Join Us</a>
+            <a href="#" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sign In</a>
+            <a href="#doc" className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white block px-3 py-2 rounded-md text-base font-medium">Get Started Free</a>
           </div>
         </div>
       )}

@@ -2,9 +2,9 @@ import React from 'react';
 
 const CTA: React.FC = () => {
   return (
-    <section className="py-20 px-4 md:px-8">
+    <section className="py-12 px-4 md:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="relative p-12 bg-[#111111] border border-gray-800/80 rounded-2xl overflow-hidden">
+        <div className="relative p-12 bg-black/40 border border-blue-500/30 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl shadow-blue-500/20">
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-blue-600/20 rounded-full blur-[180px]"></div>
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>

@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, title, avatarUrl }) => (
-  <div className="bg-[#111111] p-8 rounded-xl border border-gray-800/80 transform hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden">
+  <div className="bg-black/40 p-8 rounded-xl border border-blue-500/30 backdrop-blur-sm transform hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden shadow-lg shadow-blue-500/10">
      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     <p className="text-gray-300 mb-6 relative z-10">"{quote}"</p>
     <div className="flex items-center relative z-10">
@@ -44,7 +44,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 px-4 md:px-8">
+    <section id="testimonials" className="py-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">Loved by People Worldwide</h2>
