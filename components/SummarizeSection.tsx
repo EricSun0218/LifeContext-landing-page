@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Newspaper, FileText, Youtube, Mic, Rss, Globe } from 'lucide-react';
 
-const TABS = ['Context', 'Chat', 'Connect', 'Review', 'Recall'];
+const TABS = ['Context', 'Chat', 'Docs', 'Multimodal', 'Web', 'Workflow'];
 
 const CONTENT = {
   Context: 'Build your intelligent knowledge base from all content sources.',
   Chat: 'Chat with your documents, videos, and articles.',
-  Connect: 'Find connections between different pieces of information.',
-  Review: 'Review key highlights and takeaways automatically.',
-  Recall: 'Recall any information instantly with a simple search.',
+  Docs: 'Access and manage your documents with intelligent organization.',
+  Multimodal: 'Process text, images, audio, and video content seamlessly.',
+  Web: 'Browse and capture information from web sources.',
+  Workflow: 'Automate your knowledge management workflows.',
 };
 
 const SOURCES = [
@@ -26,8 +27,8 @@ const SummarizeSection: React.FC = () => {
   return (
     <section id="features" className="py-8 px-4 md:px-8">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        {/* Context Button with Arrows to Other Functions */}
-        <div className="flex flex-wrap justify-center items-center gap-3 mb-16">
+        {/* Context Button with Hover-Revealed Functions */}
+        <div className="flex flex-wrap justify-center items-center gap-3 mb-16 group">
           {/* Context Button */}
           <button
             onClick={() => setActiveTab('Context')}
@@ -47,7 +48,7 @@ const SummarizeSection: React.FC = () => {
             </svg>
           </div>
 
-          {/* Other Function Buttons */}
+          {/* Other Function Buttons - Text always visible, borders on hover */}
           <div className="flex flex-wrap items-center gap-2">
             {TABS.slice(1).map((tab, index) => (
               <div key={tab} className="flex items-center">
@@ -56,7 +57,7 @@ const SummarizeSection: React.FC = () => {
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     activeTab === tab 
                       ? 'bg-blue-500/20 border border-blue-500/50 text-blue-300' 
-                      : 'bg-black/20 border border-gray-600/30 text-gray-400 hover:text-gray-300 hover:border-gray-500/50'
+                      : 'text-gray-400 hover:text-gray-300 group-hover:bg-black/20 group-hover:border group-hover:border-gray-600/30'
                   }`}
                 >
                   {tab}
