@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import Header from './Header';
 
 const ResearchPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -140,6 +141,7 @@ const ResearchPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-900">
+      <Header />
       <div className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}

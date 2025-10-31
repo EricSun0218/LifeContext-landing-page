@@ -51,18 +51,18 @@ const ScenarioFeatures: React.FC = () => {
   return (
     <section className="py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* For Enterprise */}
+        {/* For Developers */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">For Enterprise</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">For Developers</h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Professional knowledge management and collaboration solutions for enterprise users
+            Professional knowledge management and collaboration solutions for developers
           </p>
         </div>
 
-        {/* Enterprise Scenario Cards */}
+        {/* Developers Scenario Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {scenarios.map((scenario, index) => (
-            <div key={`enterprise-${index}`} className="bg-black/40 border border-blue-500/30 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-shadow duration-300">
+            <div key={`developers-${index}`} className="bg-black/40 border border-blue-500/30 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-shadow duration-300">
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <img 

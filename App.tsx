@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import SummarizeSection from './components/SummarizeSection';
-import MissionVision from './components/MissionVision';
-import ScenarioFeatures from './components/ScenarioFeatures';
-import Research from './components/Research';
-import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import ProductPage from './components/ProductPage';
 import DocPage from './components/DocPage';
 import ResearchPage from './components/ResearchPage';
 
@@ -19,6 +14,8 @@ const App: React.FC = () => {
         setCurrentPage('doc');
       } else if (hash === '#research') {
         setCurrentPage('research');
+      } else if (hash === '#products') {
+        setCurrentPage('products');
       } else {
         setCurrentPage('home');
       }
@@ -29,7 +26,14 @@ const App: React.FC = () => {
 
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    
+    // Also listen for popstate (back/forward button)
+    window.addEventListener('popstate', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+    };
   }, []);
 
   if (currentPage === 'doc') {
@@ -40,19 +44,11 @@ const App: React.FC = () => {
     return <ResearchPage />;
   }
 
-  return (
-    <div className="text-gray-200 font-sans antialiased">
-      <Header />
-      <main>
-        <Hero />
-        <SummarizeSection />
-        <MissionVision />
-        <ScenarioFeatures />
-        <Research />
-      </main>
-      <Footer />
-    </div>
-  );
+  if (currentPage === 'products') {
+    return <ProductPage />;
+  }
+
+  return <HomePage />;
 };
 
 export default App;

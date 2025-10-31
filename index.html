@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LifeContext</title>
+    <title>Contexis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -26,6 +26,21 @@
       /* 强制覆盖任何可能的白色背景 */
       * {
         background-color: transparent !important;
+      }
+      
+      /* 例外：下拉菜单使用深蓝色渐变背景 */
+      [data-dropdown-menu] {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 75%, #1e3c72 100%) !important;
+        background-color: #1a1a2e !important;
+        opacity: 1 !important;
+      }
+      
+      [data-dropdown-menu] * {
+        background-color: transparent !important;
+      }
+      
+      [data-dropdown-item] {
+        color: #ffffff !important;
       }
       
       body, html, #root {

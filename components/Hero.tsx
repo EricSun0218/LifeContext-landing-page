@@ -4,28 +4,16 @@ const Hero: React.FC = () => {
   return (
     <section className="pt-16 pb-12 lg:pt-20 lg:pb-16 text-center">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 text-white">
-          Your Perfect Memory,
-          <br />
-          <span className="text-blue-500">Powered by AI.</span>
+        <h1 className="mb-6">
+          <span className="block text-5xl md:text-7xl lg:text-[8rem] font-extrabold tracking-tight mb-5 leading-none">
+            <span className="text-gradient bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              LifeContext
+            </span>
+          </span>
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10">
-          LifeContext captures your thoughts and conversations, turning them into a perfectly organized, searchable, and intelligent knowledge base.
+          Your proactive life search engine
         </p>
-        <div className="flex items-center justify-center gap-4">
-            <a
-              href="#doc"
-              className="inline-block bg-transparent border border-gray-600 text-gray-300 font-semibold px-8 py-3 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-300"
-            >
-              Get API
-            </a>
-            <a
-              href="#"
-              className="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-            >
-              Get Started Free
-            </a>
-        </div>
       </div>
     </section>
   );
